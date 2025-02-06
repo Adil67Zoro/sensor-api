@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: spring_boot_app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_NAME: devadil
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ep-mute-smoke-a4ewa1pw-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+      SPRING_DATASOURCE_USERNAME: neondb_owner
+      SPRING_DATASOURCE_PASSWORD: npg_SjYRhnmv4gt1
+      SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      JWT_AUTH_APP: authapp
+      JWT_AUTH_SECRET_KEY: sqwoddwefimqw0qocw2moefmfoeDWWDFEWF3fwgwdQDGGPOKDQLfwefgwfDWFWfwegerFWGWFWDWFhrtgref
+      JWT_AUTH_EXPIRES_IN: 3600
